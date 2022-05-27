@@ -1,0 +1,5 @@
+ERC20 Implementation Vulnerable to Front-Running: Front-running attacks involve users watching the blockchain for particular transactions and, upon observing such a transaction, submitting their own transactions with a greater gas price. This incentivises miners to prioritise the later transaction. The ERC20 implementation is known to be affected by a front-running vulnerability, in its approve() function.
+
+    Recommendation: Be aware of the front-running issues in approve() , potentially add extended approve functions which are not vulnerable to the front-running vulnerability for future third-party-applications. See the Open-Zeppelin [8] solution for an example. We note that modifying the ERC20 standard to address this issue may lead to backward incompatibilities with external third-party software.
+
+    Sigma Prime's Audit of InfiniGold
