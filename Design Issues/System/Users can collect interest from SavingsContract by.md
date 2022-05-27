@@ -1,0 +1,5 @@
+Users can collect interest from SavingsContract by only staking mTokens momentarily: The SAVE contract allows users to deposit mAssets in return for lending yield and swap fees. When depositing mAsset, users receive a “credit” tokens at the momentary credit/mAsset exchange rate which is updated at every deposit. However, the smart contract enforces a minimum timeframe of 30 minutes in which the interest rate will not be updated. A user who deposits shortly before the end of the timeframe will receive credits at the stale interest rate and can immediately trigger an update of the rate and withdraw at the updated (more favorable) rate after the 30 minutes window. As a result, it would be possible for users to benefit from interest payouts by only staking mAssets momentarily and using them for other purposes the rest of the time.
+
+    Recommendation: Remove the 30 minutes window such that every deposit also updates the exchange rate between credits and tokens.
+
+    Medium severity finding from Consensys Diligence Audit of mstable-1.1

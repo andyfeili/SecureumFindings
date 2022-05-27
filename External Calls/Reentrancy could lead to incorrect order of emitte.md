@@ -1,0 +1,5 @@
+Reentrancy could lead to incorrect order of emitted events: The order of operations in the _moveTokensAndETHfromAdjustment function in the BorrowOperations contract may allow an attacker to cause events to be emitted out of order. In the event that the borrower is a contract, this could trigger a callback into BorrowerOperations, executing the _ adjustTrove flow above again. As the _moveTokensAndETHfromAdjustment call is the final operation in the function the state of the system on-chain cannot be manipulated. However, there are events that are emitted after this call. In the event of a reentrant call, these events would be emitted in the incorrect order. The event for the second operation i s emitted first, followed by the event for the first operation. Any off-chain monitoring tools may now have an inconsistent view of on-chain state.
+
+    Recommendation: Apply the checks-effects-interactions pattern and move the event emissions above the call to _ moveTokensAndETHfromAdjustment to avoid the potential reentrancy.
+
+    ToB's Audit of Liquidity

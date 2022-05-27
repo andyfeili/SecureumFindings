@@ -1,0 +1,5 @@
+Insufficient incentives to liquidator: The liquidation process is a very important part of every DeFi project because it allows to extinguish the problem of having the whole system under-collateralized under critical conditions of the market, and it needs a design that incentivizes its speed of execution. The Holdefi contract implements the liquidation process for those accounts that may have an under-collateralized balance or that may have been inactive for a whole year without interacting with the project. The liquidator would end up paying for the expensive liquidation process, without receiving any benefit. Buying discounted collateral assets could be considered as an incentive to the liquidators
+
+    Recommendation: Consider improving the incentive design to give the liquidators higher incentives to execute the liquidation process
+
+    OpenZeppelin's Audit of HoldeFi
