@@ -1,0 +1,5 @@
+Contracts used as dependencies do not track upstream changes: Third-party contracts like _concatStorage are pasted into the Hermez repository. Moreover, the code documentation does not specify the exact revision used, or if it is modified. This makes updates and security fixes on these dependencies unreliable since they must be updated manually. _concatStorage is borrowed from the solidity-bytes-utils library, which provides helper functions for byte-related operations. Recently, a critical vulnerability was discovered in the library’s slice function which allows arbitrary writes for user-supplied inputs. 
+
+    Recommendation: Short term, review the codebase and document each dependency’s source and version. Include the third-party sources as submodules in your Git repository so internal path consistency can be maintained and dependencies are updated periodically. Long term, identify the areas in the code that are relying on external libraries and use an Ethereum development environment and NPM to manage packages as part of your project.
+
+    ToB's Audit of Hermez Network
